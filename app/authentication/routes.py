@@ -26,7 +26,7 @@ def signup():
 
 
             flash(f'You have successfully created a user account {email}', 'User-created')
-            return redirect(url_for('site.profile'))
+            return redirect(url_for('auth.signin'))
     except:
         raise Exception('Invalid form data: Please check your form')
     return render_template('sign_up.html', form=form)
@@ -57,4 +57,4 @@ def signin():
 @auth.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('site.home'))
+    return redirect(url_for('http://localhost:5173/'))
