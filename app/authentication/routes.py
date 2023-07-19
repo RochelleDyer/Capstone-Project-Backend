@@ -57,4 +57,4 @@ def signin():
 @auth.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('http://localhost:5173/'))
+    return redirect(url_for('site.index'))
