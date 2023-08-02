@@ -47,7 +47,7 @@ def signin():
             if logged_user and check_password_hash(logged_user.password, password):
                 login_user(logged_user)
                 flash('You were successful in your initiation.', 'auth-success')
-                return redirect('https://capstone-project-backend-gb8m.onrender.com/profile')
+                return redirect(url_for('https://capstone-project-backend-gb8m.onrender.com/profile'))
             else:
                 flash('You do not have access to this content.', 'auth-failed')
                 return redirect(url_for('https://capstone-project-backend-gb8m.onrender.com/signin'))
