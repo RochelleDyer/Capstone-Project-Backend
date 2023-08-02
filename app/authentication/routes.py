@@ -26,7 +26,7 @@ def signup():
 
 
             flash(f'You have successfully created a user account {email}', 'User-created')
-            return redirect(url_for('auth.signin'))
+            return redirect('https://capstone-project-backend-gb8m.onrender.com/signin')
         
     except:
         raise Exception('Invalid form data: Please check your form')
@@ -47,10 +47,10 @@ def signin():
             if logged_user and check_password_hash(logged_user.password, password):
                 login_user(logged_user)
                 flash('You were successful in your initiation.', 'auth-success')
-                return redirect(url_for('site.profile'))
+                return redirect('https://capstone-project-backend-gb8m.onrender.com/profile')
             else:
                 flash('You do not have access to this content.', 'auth-failed')
-                return redirect(url_for('auth.signin'))
+                return redirect(url_for('https://capstone-project-backend-gb8m.onrender.com/signin'))
     except:
         raise Exception('Invalid Form Data: Please Check your Form')
     return render_template('sign_in.html', form=form)
@@ -58,4 +58,4 @@ def signin():
 @auth.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('site.home'))
+    return redirect('https://timely-wisp-4ed4f4.netlify.app/#/')
